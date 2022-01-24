@@ -26,7 +26,7 @@ jobs:
         run: yarn install --immutable --immutable-cache
 
       - name: Set version
-        run: npm version --no-git-tag-version ${{ github.event.release.tag_name }}
+        run: npm version --allow-same-version --no-git-tag-version ${{ github.event.release.tag_name }}
 
       - name: Publish
         run: npm publish --access public
